@@ -1,3 +1,10 @@
+//global variables
+var interval;
+var interval2;
+var interval3;
+var interval4;
+var interval5;
+//DOM ready
 $(document).ready(function () {
     var right = 0;
     var wrong = 0;
@@ -19,7 +26,15 @@ $(document).ready(function () {
         $("#start").hide();
         right = 0;
         wrong = 0;
+        $("#newdiv").remove();
+        $("#newdiv2").remove();
         question1();
+        clearInterval(interval);
+        clearInterval(interval2);
+        clearInterval(interval3);
+        clearInterval(interval4);
+        clearInterval(interval5);
+
     };
 
     //attach questions to the hidden div
@@ -40,35 +55,44 @@ $(document).ready(function () {
         
 
         var seconds_left = 30;
-        var interval = setInterval(function () {
+        interval = setInterval(function () {
             $("#timer1").text("Time Left " + --seconds_left);
 
             if (seconds_left <= 0) {
-                wrong++;
+                
                 clearInterval(interval);
                 question2();
             }
         }, 1000);
-        $("#btn13").click(function () {
+        $("#btn11").click(function () {
             right++;
-            question2();
+            alert("Yep");
             clearInterval(interval);
+            question2();
         });
         $("#btn12").click(function () {
             wrong++;
-            question2();
             clearInterval(interval);
+            alert("No, It was 1844");
+            question2();
         });
-        $("#btn11").click(function () {
+        $("#btn13").click(function () {
             wrong++;
-            question2();
+            alert("No, It was 1844");
             clearInterval(interval);
+            question2();
         });
         $("#btn14").click(function () {
             wrong++;
-            question2();
+            alert("No, It was 1844");
             clearInterval(interval);
+            question2();
         });
+        
+        clearInterval(interval2);
+        clearInterval(interval3);
+        clearInterval(interval4);
+        clearInterval(interval5);
     };
 
 
@@ -92,11 +116,11 @@ $(document).ready(function () {
      
         
         var seconds_left = 30;
-        var interval2 = setInterval(function () {
+        interval2 = setInterval(function () {
             $("#timer2").text("Time Left " + --seconds_left);
 
             if (seconds_left <= 0) {
-                wrong++;
+                
                 clearInterval(interval2);
                 question3();
             }
@@ -104,23 +128,32 @@ $(document).ready(function () {
         $("#btn23").click(function () {
             clearInterval(interval2);
             right++;
+            alert("Yep");
             question3();
         });
         $("#btn22").click(function () {
             clearInterval(interval2);
             wrong++;
+            alert("No, It was Sister Madaleva");
             question3();
         });
         $("#btn21").click(function () {
             clearInterval(interval2);
             wrong++;
+            alert("No, It was Sister Madaleva");
             question3();
         });
         $("#btn24").click(function () {
             clearInterval(interval2);
             wrong++;
+            alert("No, It was Sister Madaleva");
             question3();
         });
+        clearInterval(interval);
+        
+        clearInterval(interval3);
+        clearInterval(interval4);
+        clearInterval(interval5);
 
     }
     //question 3
@@ -145,7 +178,7 @@ $(document).ready(function () {
             $("#timer3").text("Time Left " + --seconds_left);
 
             if (seconds_left <= 0) {
-                wrong++;
+                
                 clearInterval(interval3);
                 question4();
             }
@@ -153,23 +186,32 @@ $(document).ready(function () {
         $("#btn31").click(function () {
             clearInterval(interval3);
             right++;
+            alert("Yep");
             question4();
         });
         $("#btn32").click(function () {
             clearInterval(interval3);
             wrong++;
+            alert("No, It was 1969");
             question4();
         });
         $("#btn33").click(function () {
             clearInterval(interval3);
             wrong++;
+            alert("No, It was 1969");
             question4();
         });
         $("#btn34").click(function () {
             clearInterval(interval3);
             wrong++;
+            alert("No, It was 1969");
             question4();
         });
+        clearInterval(interval);
+        clearInterval(interval2);
+        
+        clearInterval(interval4);
+        clearInterval(interval5);
 
     }
     //question 4
@@ -188,13 +230,13 @@ $(document).ready(function () {
         $("#btn43").text("2018");
         $("#btn44").text("1888");
         
-        setTimeout(function () { question5(); }, 1000 * 30);
+        
         var seconds_left = 30;
-        var interval4 = setInterval(function () {
+        interval4 = setInterval(function () {
             $("#timer4").text("Time Left " + --seconds_left);
 
             if (seconds_left <= 0) {
-                wrong++;
+                
                 clearInterval(interval4);
                 question5();
             }
@@ -202,23 +244,32 @@ $(document).ready(function () {
         $("#btn43").click(function () {
             clearInterval(interval4);
             right++;
+            alert("Yep");
             question5();
         });
         $("#btn42").click(function () {
             clearInterval(interval4);
             wrong++;
+            alert("No, It was 2018");
             question5();
         });
         $("#btn41").click(function () {
             clearInterval(interval4);
             wrong++;
+            alert("No, It was 2018");
             question5();
         });
         $("#btn44").click(function () {
             clearInterval(interval4);
             wrong++;
+            alert("No, It was 2018");
             question5();
         });
+        clearInterval(interval);
+        clearInterval(interval2);
+        clearInterval(interval3);
+        
+        clearInterval(interval5);
     }
     //question 5
     function question5() {
@@ -239,34 +290,43 @@ $(document).ready(function () {
         $("#btn52").click(function () {
             clearInterval(interval5);
             right++;
+            alert("Yep");
             results();
 
         });
         $("#btn51").click(function () {
             clearInterval(interval5);
             wrong++;
+            alert("No, It was 1908");
             results();
         });
         $("#btn53").click(function () {
             clearInterval(interval5);
             wrong++;
+            alert("No, It was 1908");
             results();
         });
         $("#btn54").click(function () {
             clearInterval(interval5);
             wrong++;
+            alert("No, It was 1908");
             results();
         });
         var seconds_left = 30;
-        var interval5 = setInterval(function () {
+        interval5 = setInterval(function () {
             $("#timer5").text("Time Left " + --seconds_left);
 
             if (seconds_left <= 0) {
-                wrong++;
+               
                 clearInterval(interval5);
                 results();
             }
         }, 1000);
+        clearInterval(interval);
+        clearInterval(interval2);
+        clearInterval(interval3);
+        clearInterval(interval4);
+        
 
     }
     function results() {
@@ -279,23 +339,24 @@ $(document).ready(function () {
         $("#div6").show();
       
 
-        var newDiv = $("<div id='newdiv'>").text("correct " + right);
-        var newDiv2 = $("<div id='newdiv2'>").text("incorrect " + wrong);
-        //show # of correct answers
+         //show # of correct answers
         //show # of incorrect answers
        
         $("#reset").text("Restart");
         
-        $("#div6").append(newDiv);
-        $("#newdiv").append(newDiv2);
+        $("#correct").text("Correct " + right);
+        $("#incorrect").text("Incorrect " + wrong);
         $("#reset").on("click", restart);
 
     }
     function restart() {
         right = 0;
         wrong = 0;
-        $("#newdiv").remove();
-        $("#newdiv2").remove();
+        clearInterval(interval);
+        clearInterval(interval2);
+        clearInterval(interval3);
+        clearInterval(interval4);
+        clearInterval(interval5);
         $("#start").show();
         $("#div1").hide();
         $("#div2").hide();
