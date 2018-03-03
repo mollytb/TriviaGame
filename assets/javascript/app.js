@@ -1,5 +1,5 @@
 //global variables
-var interval;
+var interval
 var interval2;
 var interval3;
 var interval4;
@@ -56,37 +56,42 @@ $(document).ready(function () {
 
         var seconds_left = 30;
         interval = setInterval(function () {
-            $("#timer1").text("Time Left " + --seconds_left);
+            $("#timer2").text("Time Left " + --seconds_left);
 
             if (seconds_left <= 0) {
                 
-                clearInterval(interval);
-                question2();
+                clearInterval(interval2);
+                question3();
             }
         }, 1000);
-        $("#btn11").click(function () {
+        $("#btn11").off("click").on("click",function () {
             right++;
             alert("Yep");
             clearInterval(interval);
             question2();
+            
         });
-        $("#btn12").click(function () {
+        $("#btn12").off("click").on("click",function () {
             wrong++;
             clearInterval(interval);
             alert("No, It was 1844");
             question2();
+            
         });
-        $("#btn13").click(function () {
+        $("#btn13").off("click").on("click",function () {
             wrong++;
             alert("No, It was 1844");
             clearInterval(interval);
             question2();
+            
+
         });
-        $("#btn14").click(function () {
+        $("#btn14").off("click").on("click",function () {
             wrong++;
             alert("No, It was 1844");
             clearInterval(interval);
             question2();
+           
         });
         
         clearInterval(interval2);
@@ -125,25 +130,25 @@ $(document).ready(function () {
                 question3();
             }
         }, 1000);
-        $("#btn23").click(function () {
+        $("#btn23").off("click").on("click",function () {
             clearInterval(interval2);
             right++;
             alert("Yep");
             question3();
         });
-        $("#btn22").click(function () {
+        $("#btn22").off("click").on("click",function () {
             clearInterval(interval2);
             wrong++;
             alert("No, It was Sister Madaleva");
             question3();
         });
-        $("#btn21").click(function () {
+        $("#btn21").off("click").on("click",function () {
             clearInterval(interval2);
             wrong++;
             alert("No, It was Sister Madaleva");
             question3();
         });
-        $("#btn24").click(function () {
+        $("#btn24").off("click").on("click",function () {
             clearInterval(interval2);
             wrong++;
             alert("No, It was Sister Madaleva");
@@ -183,25 +188,25 @@ $(document).ready(function () {
                 question4();
             }
         }, 1000);
-        $("#btn31").click(function () {
+        $("#btn31").off("click").on("click",function () {
             clearInterval(interval3);
             right++;
             alert("Yep");
             question4();
         });
-        $("#btn32").click(function () {
+        $("#btn32").off("click").on("click",function () {
             clearInterval(interval3);
             wrong++;
             alert("No, It was 1969");
             question4();
         });
-        $("#btn33").click(function () {
+        $("#btn33").off("click").on("click",function () {
             clearInterval(interval3);
             wrong++;
             alert("No, It was 1969");
             question4();
         });
-        $("#btn34").click(function () {
+        $("#btn34").off("click").on("click",function () {
             clearInterval(interval3);
             wrong++;
             alert("No, It was 1969");
@@ -241,25 +246,25 @@ $(document).ready(function () {
                 question5();
             }
         }, 1000);
-        $("#btn43").click(function () {
+        $("#btn43").off("click").on("click",function () {
             clearInterval(interval4);
             right++;
             alert("Yep");
             question5();
         });
-        $("#btn42").click(function () {
+        $("#btn42").off("click").on("click",function () {
             clearInterval(interval4);
             wrong++;
             alert("No, It was 2018");
             question5();
         });
-        $("#btn41").click(function () {
+        $("#btn41").off("click").on("click",function () {
             clearInterval(interval4);
             wrong++;
             alert("No, It was 2018");
             question5();
         });
-        $("#btn44").click(function () {
+        $("#btn44").off("click").on("click",function () {
             clearInterval(interval4);
             wrong++;
             alert("No, It was 2018");
@@ -287,26 +292,26 @@ $(document).ready(function () {
         $("#btn53").text("1915");
         $("#btn54").text("1898");
        
-        $("#btn52").click(function () {
+        $("#btn52").off("click").on("click",function () {
             clearInterval(interval5);
             right++;
             alert("Yep");
             results();
 
         });
-        $("#btn51").click(function () {
+        $("#btn51").off("click").on("click",function () {
             clearInterval(interval5);
             wrong++;
             alert("No, It was 1908");
             results();
         });
-        $("#btn53").click(function () {
+        $("#btn53").off("click").on("click",function () {
             clearInterval(interval5);
             wrong++;
             alert("No, It was 1908");
             results();
         });
-        $("#btn54").click(function () {
+        $("#btn54").off("click").on("click",function () {
             clearInterval(interval5);
             wrong++;
             alert("No, It was 1908");
@@ -339,7 +344,7 @@ $(document).ready(function () {
         $("#div6").show();
       
 
-         //show # of correct answers
+        //show # of correct answers
         //show # of incorrect answers
        
         $("#reset").text("Restart");
