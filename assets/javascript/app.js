@@ -8,8 +8,8 @@ var interval5;
 $(document).ready(function () {
     var right = 0;
     var wrong = 0;
-
-
+    
+    
     //js attached
     console.log(12);
     //hide questions
@@ -29,16 +29,22 @@ $(document).ready(function () {
         $("#newdiv").remove();
         $("#newdiv2").remove();
         question1();
-        clearInterval(interval);
-        clearInterval(interval2);
-        clearInterval(interval3);
-        clearInterval(interval4);
-        clearInterval(interval5);
-
+     
+        
     };
 
     //attach questions to the hidden div
     function question1() {
+        var seconds_left = 30;
+        interval = setInterval(function () {
+            $("#timer1").text("Time Left " + --seconds_left);
+    
+            if (seconds_left <= 0) {
+                
+                clearInterval(interval);
+                question3();
+            }
+        }, 1000);
         $("#div1").show();
         $("#div2").hide();
         $("#div3").hide();
@@ -51,19 +57,10 @@ $(document).ready(function () {
         $("#btn12").text("1992");
         $("#btn13").text("1895");
         $("#btn14").text("1888");
-        $("#div1").show();
         
+        
+    
 
-        var seconds_left = 30;
-        interval = setInterval(function () {
-            $("#timer2").text("Time Left " + --seconds_left);
-
-            if (seconds_left <= 0) {
-                
-                clearInterval(interval2);
-                question3();
-            }
-        }, 1000);
         $("#btn11").off("click").on("click",function () {
             right++;
             alert("Yep");
@@ -94,10 +91,6 @@ $(document).ready(function () {
            
         });
         
-        clearInterval(interval2);
-        clearInterval(interval3);
-        clearInterval(interval4);
-        clearInterval(interval5);
     };
 
 
@@ -118,6 +111,8 @@ $(document).ready(function () {
         $("#btn22").text("Carol Ann Mooney");
         $("#btn23").text("Sister Madaleva");
         $("#btn24").text("Molly Burns");
+
+     
      
         
         var seconds_left = 30;
@@ -154,11 +149,6 @@ $(document).ready(function () {
             alert("No, It was Sister Madaleva");
             question3();
         });
-        clearInterval(interval);
-        
-        clearInterval(interval3);
-        clearInterval(interval4);
-        clearInterval(interval5);
 
     }
     //question 3
@@ -176,10 +166,12 @@ $(document).ready(function () {
         $("#btn32").text("1965");
         $("#btn33").text("1895");
         $("#btn34").text("1983");
-      
-        setTimeout(function () { question4(); }, 1000 * 30);
+
+   
+        
+        
         var seconds_left = 30;
-        var interval3 = setInterval(function () {
+        interval3 = setInterval(function () {
             $("#timer3").text("Time Left " + --seconds_left);
 
             if (seconds_left <= 0) {
@@ -212,11 +204,6 @@ $(document).ready(function () {
             alert("No, It was 1969");
             question4();
         });
-        clearInterval(interval);
-        clearInterval(interval2);
-        
-        clearInterval(interval4);
-        clearInterval(interval5);
 
     }
     //question 4
@@ -235,6 +222,7 @@ $(document).ready(function () {
         $("#btn43").text("2018");
         $("#btn44").text("1888");
         
+     
         
         var seconds_left = 30;
         interval4 = setInterval(function () {
@@ -270,11 +258,6 @@ $(document).ready(function () {
             alert("No, It was 2018");
             question5();
         });
-        clearInterval(interval);
-        clearInterval(interval2);
-        clearInterval(interval3);
-        
-        clearInterval(interval5);
     }
     //question 5
     function question5() {
@@ -291,6 +274,18 @@ $(document).ready(function () {
         $("#btn52").text("1908");
         $("#btn53").text("1915");
         $("#btn54").text("1898");
+        
+       
+        var seconds_left = 30;
+        interval5 = setInterval(function () {
+            $("#timer5").text("Time Left " + --seconds_left);
+
+            if (seconds_left <= 0) {
+               
+                clearInterval(interval5);
+                results();
+            }
+        }, 1000);
        
         $("#btn52").off("click").on("click",function () {
             clearInterval(interval5);
@@ -317,20 +312,6 @@ $(document).ready(function () {
             alert("No, It was 1908");
             results();
         });
-        var seconds_left = 30;
-        interval5 = setInterval(function () {
-            $("#timer5").text("Time Left " + --seconds_left);
-
-            if (seconds_left <= 0) {
-               
-                clearInterval(interval5);
-                results();
-            }
-        }, 1000);
-        clearInterval(interval);
-        clearInterval(interval2);
-        clearInterval(interval3);
-        clearInterval(interval4);
         
 
     }
@@ -357,11 +338,7 @@ $(document).ready(function () {
     function restart() {
         right = 0;
         wrong = 0;
-        clearInterval(interval);
-        clearInterval(interval2);
-        clearInterval(interval3);
-        clearInterval(interval4);
-        clearInterval(interval5);
+       
         $("#start").show();
         $("#div1").hide();
         $("#div2").hide();
